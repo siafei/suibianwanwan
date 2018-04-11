@@ -11,10 +11,10 @@ class App{
      */
     static public function run() {
 		$pathinfo = explode('/',$_SERVER['PATH_INFO']) ;
-        $class = 'app\Controller\\'.ucfirst($pathinfo[1]).'Controller' ;
+        $class = 'app\Controller\\'.ucfirst($pathinfo[2]).'Controller' ;
         $action = 'index' ;
-        if (!empty($pathinfo[2])) {
-        	$action = $pathinfo[2] ;
+        if (!empty($pathinfo[3])) {
+        	$action = $pathinfo[3] ;
         }
         $module  =  new $class;
         try{
